@@ -2,11 +2,13 @@
 <html>
 <title>Sultankurta</title>
 <meta charset="UTF-8">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="jquery.min.js"></script>
-
-<link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+<link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,10 +19,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1 {font-family: "Raleway", sans-serif;
+  body{
+    background-color:#080000;
+  }
+h1 {font-family: "Raleway", sans-serif;
 color: black;
+
 font-weight:500;}
 body, html {height: 100%}
+.mySlides {display:none;}
 .bgimg {
    background-image: url('headimage.jpg');
   min-height:100%;
@@ -53,6 +60,578 @@ background-color: black;
 opacity:0.9;
 z-index: 999999;
 }
+body {
+  background-color:#080000;
+}
+
+.block {
+  height: 10em;
+
+  width: 10em;
+  background: #464646;
+  color: #fdfdfd;
+/*  text-align: center*/;
+  margin: 5em auto;
+  text-shadow: 0 0 1px #333; /* so one can see fadeBgColor properly */
+}
+
+.animatable {
+  
+  /* initially hide animatable objects */
+  visibility: hidden;
+  
+  /* initially pause animatable objects their animations */
+  -webkit-animation-play-state: paused;   
+  -moz-animation-play-state: paused;     
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;   
+  animation-play-state: paused; 
+}
+
+/* show objects being animated */
+.animated {
+  visibility: visible;
+  
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+
+/* CSS Animations (extracted from http://glifo.uiparade.com/) */
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  } 100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+  }
+  60% {
+    -webkit-transform: translateX(20px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px);
+  }
+
+  60% {
+    -moz-transform: translateX(20px);
+  }
+
+  80% {
+    -moz-transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+  }
+}
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(20px);
+  }
+
+  80% {
+    -o-transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    transform: translateX(20px);
+  }
+
+  80% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+  }
+
+  60% {
+    -webkit-transform: translateX(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateX(5px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px);
+  }
+
+  60% {
+    -moz-transform: translateX(-20px);
+  }
+
+  80% {
+    -moz-transform: translateX(5px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+  }
+}
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px);
+  }
+
+  60% {
+    -o-transform: translateX(-20px);
+  }
+
+  80% {
+    -o-transform: translateX(5px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+
+  60% {
+    transform: translateX(-20px);
+  }
+
+  80% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  } 100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(.3);
+  }
+
+  50% {
+    -moz-transform: scale(1.05);
+  }
+
+  70% {
+    -moz-transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+}
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(.3);
+  }
+
+  50% {
+    -o-transform: scale(1.05);
+  }
+
+  70% {
+    -o-transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes moveUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(40px);
+  } 100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes moveUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes moveUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeBgColor {
+  0%{
+    background:none;
+  }
+  70%{
+    background:none;
+  }
+  100%{
+    background:#464646;
+  }
+}
+@-o-keyframes fadeBgColor {
+  0%{
+    background:none;
+  }
+  70%{
+    background:none;
+  }
+  100%{
+    background:#464646;
+  }
+}
+@keyframes fadeBgColor {
+  0%{
+    background:none;
+  }
+  70%{
+    background:none;
+  }
+  100%{
+    background:#464646;
+  }
+}
+
+.animated.animationDelay{
+  animation-delay:.4s;
+  -webkit-animation-delay:.4s;
+}
+.animated.animationDelayMed{
+  animation-delay:1.2s;
+  -webkit-animation-delay:1.2s;
+}
+.animated.animationDelayLong{
+  animation-delay:1.6s;
+  -webkit-animation-delay:1.6s;
+}
+.animated.fadeBgColor {
+  -webkit-animation-name: fadeBgColor;
+  -moz-animation-name: fadeBgColor;
+  -o-animation-name: fadeBgColor;
+  animation-name: fadeBgColor;
+}
+.animated.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+.animated.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+.animated.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+.animated.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+.animated.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+.animated.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+.animated.moveUp {
+  -webkit-animation-name: moveUp;
+  -moz-animation-name: moveUp;
+  -o-animation-name: moveUp;
+  animation-name: moveUp;
+}
+
+
 </style>
 
 <body >
@@ -62,13 +641,12 @@ z-index: 999999;
   <img src="logo1.png" style="width:100%;margin:20px 0" alt="Blog Template"><br>
 </div>
 </div>
-<div class="w3-bar w3-top w3-transparent w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey w3-black" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+<!--  <div class="w3-bar w3-top w3-transparent w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey w3-black" onclick="w3_open();"><i class="fa fa-bars"></i>Menu</button>
   <span class="w3-bar-item w3-right"></span>
 </div>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left w3-black" style="z-index:3;width:200px;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left w3-black" style="z-index:3;width:140px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
    
@@ -76,7 +654,7 @@ z-index: 999999;
     <div class="w3-col s8 w3-bar w3-black">
      
        <img src="logo1.png" style="width:100%;">
-      <!-- <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> -->
+       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> 
  
     </div>
   </div>
@@ -97,8 +675,8 @@ z-index: 999999;
 
   
   </div>
-<!-- Sidebar -->
-</nav>
+
+</nav> -->
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
  
@@ -112,8 +690,204 @@ z-index: 999999;
   </div>
  
 </div>
+
+
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin ">
+    <div class="animatable bounceIn">
+    <div class="w3-container"style="background-color:#080000;color: white;">
+      <h3><b>Introduction</b></h3>
+      <h5>Foundation <span class="w3-opacity">January 27, 1990</span></h5>
+      <hr class="w3-border-grey" style="margin:auto;width:30%">
+      <br>
+    </div>
+
+    <div class="w3-container"style="background-color:#080000;color: white;">
+      <p>Sultan was founded by Arshad Shamim, who is now presently the Director of the very company which he set up on 27th January 1990 which sold Kurtas and Sherwani with not a varied collection. On 27th January 2000, Sultan became Sultans Apparels Pvt. Ltd. which sold Kurta, Sherwani, Ethnic accessories, Grooms wear, children's wear etc. This company provides a huge variety of Collection to satisfy customers from all over the country to across the border. Sultans Apparels are affiliated to Big bazar, Reliance.</p>
+    </div>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+         
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+
+   
+    <div class="w3-container">
+     
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+         
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+    <div class="animatable bounceInRight">
+    <div class="w3-container "style="background-color: #080000;color: white;">
+      <h4><b>About Founder</b></h4>
+      <br>
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        <br>
+      <p>Arshad Shamim, the brain behind this huge company now started his business long back. He lost his father at 9 years age. Sultan started when the founder opened a small kurta stall which sold Kurtas at Rs. 99. The huge breakthrough came when his clothes made  Rs. 1 Lakh wholesale.There was no turning point then and was officially founded on the auspicious occasion of Holy Ramzan. The company which is now the biggest wholesaler in the market started of with just 15 second hand machines. The innovative lookout and efficient management brought out the best results for the company.  </p>
+    </div>
+  </div><hr>
+  </div>
+  <!-- Posts -->
+ 
+   
+  </div>
+  <hr> 
+ </div>
+</div>
+
+
+<div class="wrapper w3-black">
+
+
+    
+      <div class=" w3-padding-50 w3-margin-bottom   "style="background-color:#080000;">
+        
+      </div>
+
+      <div class="w3-row-padding w3-content  " style="max-width:1400px;background-color:#080000;">
+        <div class="w3-twothird "style="background-color:#080000;">
+          <!-- <img src="register2.jpg" alt="Notebook" style="width:100%"> -->
+       
+            <div class=" animatable moveUp">
+        <div class="w3-content w3-black " style="max-width:700px">
+          <img class="mySlides w3-animate-fading" src="p1image2.jpg" style="width:100%;height:400px">
+          <img class="mySlides w3-animate-fading" src="p1image1.jpg" style="width:100%;height:400px;display:none;">
+          <img class="mySlides w3-animate-fading" src="p1image2.jpg" style="width:100%;height:400px;display:none">
+          <img class="mySlides w3-animate-fading" src="p1image1.jpg" style="width:100%;height:400px;display:none;max-width:800px">
+
+        <div class="w3-row-padding w3-section">
+
+        
+      </div>
+     </div>
+    </div>
+  </div>
+   
+<div class=" animatable fadeInUp">
+    <div class="w3-third">
+      <div class="w3-container "style="background-color:#080000;">
+        <h4 style="color: white;font-family: cursive;">
+          <h1 class="w3-jumb  " style="color:#eee;font-weight:900;">Arzi Pattern Sherwani</h1>
+          <br>
+           <hr class="w3-border-grey" style="margin:auto;width:30%">
+           <br>
+The golden colour is supposed to give the most shining and glittering effect in an attire. The golden colour radiates illumination, reflects love and passion and gives you a magical feeling with its purity of shade. Gold is no doubt the most vibrant, grandeur and sparkling colours all the shades.
+
+This product is an unique outcome from the Unique Zari fabric. The Kurta is characterized with Arzi pattern which makes it suitable for a wedding occasion and is very eye catching. The motive of this work is nature related. The jewellery goes on this very well magically enhancing the beauty of this particular Kurta. A quality product that goes with the macho personality and suits the perfect man. Surely the Groom stands out an exception in this regal attire of Kurta.</h4>
+          
+      <div class="item button-knowmore" style="--bg-color: #9b59b6;">
+          <br><br><br><br>
+           
+
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+</div>
+
+
+
+<div class="wrapper">
+    
+   
+
+  <!--   <div class="block animatable bounceInRight">bounceInRight</div>
+    
+    <div class="block animatable fadeIn">fadeIn</div>
+    <div class="block animatable fadeInDown">fadeInDown</div>
+    <div class="block animatable fadeInUp">fadeInUp</div>
+    
+    <div class="block animatable moveUp">moveUp</div>
+    
+    <div class="block animatable fadeBgColor">fadeBgColor</div>
+      
+    <div class="block animatable bounceIn">bounceIn</div>
+    <div class="block animatable bounceInLeft">bounceInLeft</div>
+    <div class="block animatable bounceInRight">bounceInRight</div>
+ -->
+
+</div>
+
 </body>
 <script type="text/javascript">
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+// Trigger CSS animations on scroll.
+// Detailed explanation can be found at http://www.bram.us/2013/11/20/scroll-animations/
+
+// Looking for a version that also reverses the animation when
+// elements scroll below the fold again?
+// --> Check https://codepen.io/bramus/pen/vKpjNP
+
+jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+    $animatables.each(function(i) {
+       var $animatable = $(this);
+      if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+      }
+    });
+
+  };
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+  $(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
 $(document).ready(function() {
 
 $(window).on("load", function() {
