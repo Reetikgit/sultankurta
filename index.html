@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Sultankurta</title>
 <meta charset="UTF-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1 {font-family: "Raleway", sans-serif;
-color: black;}
+color: black;
+font-weight:500;}
 body, html {height: 100%}
 .bgimg {
    background-image: url('headimage.jpg');
@@ -15,12 +22,83 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
+.spinner {
+  width:50px;
+  height:50px;
+position: absolute;
+left:46%;
+top: 46%;
+-webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(360deg)  }
+}
+
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: black;
+opacity:0.9;
+z-index: 999999;
+}
 </style>
-<body>
+
+<body class="w3-light-grey">
+<!-- Sidebar/menu -->
+<div class="spinner-wrapper">
+<div class="spinner">
+  <img src="logo1.png" style="width:100%;margin:20px 0" alt="Blog Template"><br>
+</div>
+</div>
+<div class="w3-bar w3-top w3-transparent w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey w3-black" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right"></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left w3-black" style="z-index:3;width:200px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+   
+    </div>
+    <div class="w3-col s8 w3-bar w3-black">
+     
+       <img src="logo1.png" style="width:100%;">
+      <!-- <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> -->
+ 
+    </div>
+  </div>
+    <div class="w3-container w3-black" >
+
+  </div>
+  <div class="w3-bar-block w3-black">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large  w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-home fa-fw"></i> Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>About</a>
+    <br>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Product1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Product2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Product3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Product4</a>
+  <br>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-contact fa-fw"></i>Contact</a>
+
+  
+  </div>
+<!-- Sidebar -->
+</nav>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <img src="logo1.png" style="width:20%;">
+ 
+  <div class="w3-display-topleft w3-padding-large w3-xlarge ">
+  
   </div>
   <div class="w3-display-middle">
     <h1 class="w3-jumbo w3-animate-top">SultanKurta</h1>
@@ -30,5 +108,40 @@ body, html {height: 100%}
  
 </div>
 
+<script>
+$(document).ready(function() {
+
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
+// Toggle grid padding
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
 </body>
 </html>
