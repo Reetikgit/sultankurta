@@ -845,26 +845,21 @@ Arshad Shamim, the brain behind this huge company now started his business long 
           <img class="mySlides w3-animate-fading" src="headimage2.jpg" style="width:100%;height:400px;display:none">
 
         <div class="w3-row-padding w3-section">
-
+            <br><br>
         
       </div>
      </div>
     </div>
   
    
-  
-    <div class="w3-third">
 
+    <div class="w3-third">
+  <br><br>
       <div class="w3-container "style="background-color:#1a1a1c;">
           
-        
-        
       
-          <br>
-        
-           <br>
     </div>
-    <br><br><br><br>
+    <br><br>
     <div class="w3-container"style="background-color:#1a1a1c;color: white;">
       <div class=" animatable moveUp">
     <p>The golden colour is supposed to give the most shining and glittering effect in an attire. The golden colour radiates illumination, reflects love and passion and gives you a magical feeling with its purity of shade. Gold is no doubt the most vibrant, grandeur and sparkling colours all the shades.
@@ -959,7 +954,7 @@ jQuery(function($) {
     // Check all animatables and animate them if necessary
     $animatables.each(function(i) {
        var $animatable = $(this);
-      if (($animatable.offset().top + $animatable.height() -200) < offset) {
+      if (($animatable.offset().top + $animatable.height() -200) <= offset) {
         $animatable.removeClass('animatable').addClass('animated');
       }
     });
