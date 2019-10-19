@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
 <title>Sultankurta</title>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
   body{
     background-color:#080000;
@@ -68,9 +67,7 @@ body {
   h1{
     font-size: 25px;
   }
-  img{
-    width:100px;
-  }
+ 
   
 }
 .block {
@@ -645,11 +642,7 @@ body {
 
 <body >
 <!-- Sidebar/menu -->
-<!-- <div class="spinner-wrapper">
-<div class="spinner">
-  <img src="logo1.png" style="width:100%;margin:20px 0" alt="Blog Template"><br>
-</div>
-</div> -->
+<!--  -->
 <!--  <div class="w3-bar w3-top w3-transparent w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey w3-black" onclick="w3_open();"><i class="fa fa-bars"></i>Menu</button>
   <span class="w3-bar-item w3-right"></span>
@@ -688,7 +681,11 @@ body {
 </nav> -->
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
- 
+ <div class="spinner-wrapper">
+<div class="spinner">
+  <img src="logo1.png" style="width:100%;margin:20px 0" alt="Blog Template"><br>
+</div>
+</div>
   <div class="w3-display-topleft w3-padding-large w3-xlarge ">
   
   </div>
@@ -719,8 +716,8 @@ body {
       <p>Sultan was founded by Arshad Shamim, who is now presently the Director of the very company which he set up on 27th January 1990 which sold Kurtas and Sherwani with not a varied collection. On 27th January 2000, Sultan became Sultans Apparels Pvt. Ltd. which sold Kurta, Sherwani, Ethnic accessories, Grooms wear, children's wear etc. This company provides a huge variety of Collection to satisfy customers from all over the country to across the border. Sultans Apparels are affiliated to Big bazar, Reliance.</p>
     </div>
       <div class="w3-row">
-        <div class="w3-col m8 s12">
-         <p><button  onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-padding-large w3-hover-black w3-border "><b>READ MORE »</b></button></p>
+        <div class="w3-col m8 s12 w3-center">
+         <p><button  onclick="document.getElementById('id01').style.display='block'" class="w3-button  w3-padding-large w3-hover-black w3-border "><b>READ MORE</b></button></p>
         </div>
         <div class="w3-col m4 w3-hide-small">
           
@@ -879,6 +876,20 @@ This product is an unique outcome from the Unique Zari fabric. The Kurta is char
 
 </body>
 <script type="text/javascript">
+
+
+$(document).ready(function() {
+
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
+
 var myIndex = 0;
 carousel();
 
@@ -929,17 +940,7 @@ jQuery(function($) {
   $(window).trigger('scroll');
 
 });
-$(document).ready(function() {
 
-$(window).on("load", function() {
-preloaderFadeOutTime = 500;
-function hidePreloader() {
-var preloader = $('.spinner-wrapper');
-preloader.fadeOut(preloaderFadeOutTime);
-}
-hidePreloader();
-});
-});
 // Toggle grid padding
 var mySidebar = document.getElementById("mySidebar");
 
