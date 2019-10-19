@@ -118,11 +118,11 @@ body {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
   
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -ms-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration:2s;
+  -moz-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
 
   -webkit-animation-play-state: running;
   -moz-animation-play-state: running;
@@ -512,7 +512,7 @@ body {
 }
 @-webkit-keyframes moveUp {
   0% {
-    opacity: 1;
+    opacity:1;
     -webkit-transform: translateY(40px);
   } 100% {
     opacity: 1;
@@ -723,11 +723,12 @@ body {
    
     <div class="w3-container"style="background-color:#1a1a1c;color: white;">
       <h3>Introduction</h3>
+      <div class="animatable moveUp">
       <h5>Foundation <span class="w3-opacity">January 27, 1990</span></h5>
       
       <br>
-   
-<div class="animatable moveUp">
+      </div>
+         <div class="animatable moveUp">
     <div class="w3-container"style="background-color:#1a1a1c;color: white;">
       <p>Sultan was founded by Arshad Shamim, who is now presently the Director of the very company which he set up on 27th January 1990 which sold Kurtas and Sherwani with not a varied collection. On 27th January 2000, Sultan became Sultans Apparels Pvt. Ltd. which sold Kurta, Sherwani, Ethnic accessories, Grooms wear, children's wear etc. This company provides a huge variety of Collection to satisfy customers from all over the country to across the border. Sultans Apparels are affiliated to Big bazar, Reliance.</p>
     </div>
@@ -816,7 +817,7 @@ Arshad Shamim, the brain behind this huge company now started his business long 
         
       </div>
       <div class="w3-container"style="background-color:#1a1a1c;color: white;">
-        <h1 class="w3-jumb" style="color:white;font-weight:1000;"><b><p> Arzi Pattern Sherwani</b></p></h1>
+        <h1 class="w3-jumb w3-center" style="color:white;font-weight:1000;"><b><p> Arzi Pattern Sherwani</b></p></h1>
         <br>
         <br>
       </b></h1></div>
@@ -826,9 +827,9 @@ Arshad Shamim, the brain behind this huge company now started his business long 
        
         <div class="w3-content w3-transparent" style="max-width:700px;max-height:300px;">
           <img class="mySlides w3-animate-fading" src="headimage.jpg" style="width:100%;height:400px">
-          <img class="mySlides w3-animate-fading" src="p1image1.jpg" style="width:100%;height:400px;display:none">
           <img class="mySlides w3-animate-fading" src="p1image2.jpg" style="width:100%;height:400px;display:none">
           <img class="mySlides w3-animate-fading" src="headimage.jpg" style="width:100%;height:400px;display:none">
+          <img class="mySlides w3-animate-fading" src="headimage2.jpg" style="width:100%;height:400px;display:none">
 
         <div class="w3-row-padding w3-section">
 
@@ -838,7 +839,7 @@ Arshad Shamim, the brain behind this huge company now started his business long 
     </div>
   
    
-    <div class=" animatable fadeInUp">
+  
     <div class="w3-third">
 
       <div class="w3-container "style="background-color:#1a1a1c;">
@@ -850,6 +851,7 @@ Arshad Shamim, the brain behind this huge company now started his business long 
            <hr class="w3-border-grey" style="margin:auto;width:30%;">
            <br>
     </div>
+      <div class=" animatable fadeInUp">
     <div class="w3-container"style="background-color:#1a1a1c;color: white;">
     
     <p>The golden colour is supposed to give the most shining and glittering effect in an attire. The golden colour radiates illumination, reflects love and passion and gives you a magical feeling with its purity of shade. Gold is no doubt the most vibrant, grandeur and sparkling colours all the shades.
@@ -944,7 +946,7 @@ jQuery(function($) {
     // Check all animatables and animate them if necessary
     $animatables.each(function(i) {
        var $animatable = $(this);
-      if (($animatable.offset().top + $animatable.height() - 10) < offset) {
+      if (($animatable.offset().top + $animatable.height() -160) < offset) {
         $animatable.removeClass('animatable').addClass('animated');
       }
     });
