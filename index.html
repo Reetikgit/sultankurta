@@ -783,7 +783,128 @@ section {
 }
 /* SERVICE SECTION
 -------------------------------------------------- */
+/*header*/
+header {
+ width: 800px;
+ margin: 40px auto;
+}
+ 
+header h1 {
+ text-align: center;
+ font: 100 60px/1.5 Helvetica, Verdana, sans-serif;
+ 
+}
+ 
+header p {
+ font: 100 15px/1.5 Helvetica, Verdana, sans-serif;
+ text-align: justify;
+}
+ 
+/*photobanner*/
+ 
+.photobanner {
+ height: 50px;
+ width: 100px;
 
+}
+.first {
+ -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation: bannermove 30s linear infinite;
+     -ms-animation: bannermove 30s linear infinite;
+      -o-animation: bannermove 30s linear infinite;
+         animation: bannermove 30s linear infinite;
+}
+ 
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -2125px;
+ }
+ 
+}
+ 
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+ 
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+ 
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+ 
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+.photobanner {
+ height: 233px;
+ width: 3550px;
+
+}
+ 
+.photobanner img {
+  width:%;
+  height: 80%;
+ -webkit-transition: all 0.5s ease;
+ -moz-transition: all 0.5s ease;
+ -o-transition: all 0.5s ease;
+ -ms-transition: all 0.5s ease;
+ transition: all 0.5s ease;
+}
+ 
+.photobanner img:hover {
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+ transform: scale(1.1);
+ cursor: pointer;
+ 
+ -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+ -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+ box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+* {margin: 0; padding: 0;}
+ 
+body {
+ <!-- src: http://subtlepatterns.com/?p=1045 -->
+ background: url('dark_geometric.png');
+}
+ 
+#container {
+ width: 1000px;
+ overflow: hidden;
+ margin: 50px auto;
+ background: white;
+}
 .service-sec .heading {
   float: left;
   width: 100%;
@@ -1109,10 +1230,10 @@ ul {
 <!-- product 1 close -->
 
 <!-- <Horizontal slider> -->
-<div class="app">
+<div class="app" id="flavoursContainer">
   <h1>Product name</h1>
   
-  <ul class="hs">
+  <ul class="hs" id="flavoursContainer">
     <li class="item">
       <div class="swiper-container main-slider" id="myCarousel">
       <div class="swiper-wrapper">
@@ -1222,6 +1343,7 @@ ul {
 <br><br>
 <!-- product 2 -->
 
+
 <div class="row no-gutters">
  <div class="w3-container"style="background-color:#1a1a1c;color: white;">
       <div class=" animatable moveUp"> 
@@ -1266,10 +1388,51 @@ ul {
 </div>
 
 <!-- Product2 close -->
+<div id="container">
+    <header>
+     <h1>Sultankurta Gallery</h1>
+     <p></p>
+    </header>
+    
+    <!-- Each image is 350px by 233px -->
+    <div class="photobanner">
+      <img class="first" src="image-1.jpg">
+      <img src="headimage2.jpg" alt="" />
+      <img src="p1image2.jpg" alt="" />
+      <img src="headimage.jpg" alt="" />
+      <img src="p1image2.jpg" alt="" />
+      <img src="headimage2.jpg" alt="" />
+      <img src="p1image2.jpg" alt="" />
+      <img src="p1image2.jpg" alt="" />
+      <img src="headimage2.jpg" alt="" />
+      <img src="headimage.jpg" alt="" />
+       <img src="headimage2.jpg" alt="" />
+      <img src="p1image2.jpg" alt="" />
+      <img src="p1image2.jpg" alt="" />
+      <img src="headimage2.jpg" alt="" />
+      <img src="headimage.jpg" alt="" />
+    </div>
+</div>
 </body>
 
 <!-- java script   -->  
 <script type="text/javascript">
+
+  const flavoursContainer = document.getElementById("flavoursContainer")
+const flavoursScrollWidth = flavoursContainer.scrollWidth
+
+window.addEventListener("load", () => {
+  self.setInterval(() => {
+    
+    if(flavoursContainer.scrollLeft < flavoursScrollWidth) {
+      flavoursContainer.scrollTo(flavoursContainer.scrollLeft+1,5);
+    }
+ 
+    flavoursContainer.scrollTo(flavoursContainer.scrollLeft, 0);
+    
+  }, 20);
+
+})
  //smoothscroll
     $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
