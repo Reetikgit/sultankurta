@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>Sultankurta</title>
+<title>Sultan Sherwanis</title>
 
 <meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+ <link rel="shortcut icon" href="logo1.ico">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -1109,7 +1109,8 @@ ul {
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;font-family:agaramondpro, serif;font-size: 1rem; " id="mySidebar">
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large " style="display:none;font-family:agaramondpro, serif;font-size: 1rem; " id="mySidebar">
+
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
@@ -1216,7 +1217,7 @@ ul {
   
   <div class="col-12 col-sm-6 col-md-8"> 
     <div class=" animatable moveUp">
-    <div class="swiper-container main-slider" id="myCarousel">
+    <div class="swiper-container main-slider" id="myCarousel" style="max-width:100%;max-height:50%;">
       <div class="swiper-wrapper">
         <div class="swiper-slide slider-bg-position" style="background:url('headimage2.jpg')" data-hash="slide1">
           <h2></h2>
@@ -1244,14 +1245,12 @@ ul {
 <!-- <Horizontal slider> -->
    <div id="container">
     <header>
-     <h1 class="headings2">Product</h1>
+     <h1 class="headings">Blue</h1>
      <p></p>
     </header>
     
   
     <div class="photobanner">
-       <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
-      <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
       <img class="first" src="headimage2.jpg">
       <img src="headimage2.jpg" alt=""style="">
       <img src="p1image2.jpg" alt="" />
@@ -1581,8 +1580,58 @@ ul {
 <!-- java script   -->  
 <script type="text/javascript">
 
+$(document.body).click( function() {
+    closeMenu();
+});
 
+$(".dialog").click( function(e) {
+    e.stopPropagation(); // this stops the event from bubbling up to the body
+});
+function closeMenu(){
+  $('.dialog').fadeOut(200);
+  $('.add').removeClass('active');  
+}
 
+$(document.body).click( function(e) {
+     closeMenu();
+});
+
+$(".dialog").click( function(e) {
+    e.stopPropagation(); // this stops the event from bubbling up to the body
+});
+jQuery('body').bind('click', function(e) {
+    if(jQuery(e.target).closest('.navbar').length == 0) {
+        // click happened outside of .navbar, so hide
+        var opened = jQuery('.navbar-collapse').hasClass('collapse in');
+        if ( opened === true ) {
+            jQuery('.navbar-collapse').collapse('hide');
+        }
+    }
+});
+jQuery(document.body).on('click', function(ev){
+    if(jQuery(ev.target).closest('.navbar-collapse').length) return; // Not return false
+
+    // Hide navbar
+});
+$(window).click(function (e) {
+     if ($(e.target).closest('.codehim-dropdown').length) {
+         return;
+     }
+     if ($(e.target).closest(offCanvas).length) {
+         return;
+     }
+
+     //check if menu really opened
+     if ($(hamburger).hasClass("active")) {
+         closeMenu();
+     }
+
+     $(dimOverlay).fadeOut();
+
+     $(".menu-items").slideUp();
+     $(".dropdown-heading").removeClass("active");
+
+});
 
  //smoothscroll
     $('a[href^="#"]').on('click', function (e) {
