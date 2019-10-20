@@ -870,30 +870,39 @@ header p {
  
 }
 .photobanner {
- height: 400px;
+ height:300px;
  width: 3550px;
  background-color:#1a1a1c
+overflow-y:scroll;
 
 }
  
 .photobanner img {
   
-  height:100%;
+  max-height:100%;
+
  -webkit-transition: all 2s ease;
  -moz-transition: all 2s ease;
  -o-transition: all 2s ease;
  -ms-transition: all 0.5s ease;
  transition: all 0.5s ease;
+ overflow-y:scroll;
 }
  
 .photobanner img:hover {
+   animation:paused;
+  -webkit-animation: paused;   
+   -webkit-transform:paused;
  -webkit-transform: scale(1.1);
  -moz-transform: scale(1.1);
  -o-transform: scale(1.1);
  -ms-transform: scale(1.1);
  transform: scale(1.1);
  cursor: pointer;
- 
+  -moz-animation-play-state:paused;
+      -o-animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+          -webkit-animation-play-state: paused;
  -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
  -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
@@ -1586,7 +1595,7 @@ ul {
         $target = $(target);
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top+2
-        }, 500, 'swing', function () {
+        }, 1500, 'swing', function () {
             window.location.hash = target;
             $(document).on("scroll", onScroll);
         });
