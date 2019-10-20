@@ -107,11 +107,7 @@ body {
  
 
 }
-div{
-  webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
+
 @media screen and (max-width: 601px) {
   
   h1{
@@ -924,7 +920,12 @@ ul {
   background:#1a1a1c;
   overflow-y:scroll;
 }
-
+.bgimg{
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  overflow: hidden;
+}
 .hs > li,
 .item {
 
@@ -955,7 +956,7 @@ ul {
 <!-- NAvigation menu -->
 <div class="bg-div">
     
-<div class="w3-top">
+<div class="w3-top ">
 
   <div class="w3-bar w3-card" id="myNavbar" style="background-color:#1a1a1c;height:10vh;">
     <a href="#home" class="w3-bar-item w3-button w3-wide">
@@ -992,7 +993,7 @@ ul {
 
 
 
-  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="bgimg w3-display-container  w3-animate-opacity w3-text-white">
 
 <section id="home">
       <div class="w3-display-middle">
