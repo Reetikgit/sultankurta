@@ -1391,13 +1391,13 @@ ul {
 </div>
 
 <!-- Product2 close -->
-<div id="container">
+<!-- <div id="container">
     <header>
      <h1 class="headings2">Sultankurta Gallery</h1>
      <p></p>
     </header>
     
-    <!-- Each image is 350px by 233px -->
+  
     <div class="photobanner">
       <img class="first" src="image-1.jpg">
       <img src="headimage2.jpg" alt="" />
@@ -1415,7 +1415,7 @@ ul {
       <img src="headimage2.jpg" alt="" />
       <img src="headimage.jpg" alt="" />
     </div>
-</div>
+</div> -->
 </body>
 
 <!-- java script   -->  
@@ -1426,14 +1426,12 @@ const flavoursScrollWidth = flavoursContainer.scrollWidth
 
 window.addEventListener("load", () => {
   self.setInterval(() => {
-    
-    if(flavoursContainer.scrollLeft < flavoursScrollWidth) {
-      flavoursContainer.scrollTo(flavoursContainer.scrollLeft+1,5);
+  
+    if(flavoursContainer.scrollLeft != flavoursScrollWidth) {
+      flavoursContainer.scrollTo(flavoursContainer.scrollLeft+1,0);
     }
- 
-    flavoursContainer.scrollTo(flavoursContainer.scrollLeft, 0);
     
-  }, 20);
+  },120);
 
 })
  //smoothscroll
