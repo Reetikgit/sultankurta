@@ -1979,18 +1979,6 @@ var ScrollPosStyler = (function(document, window) {
 })(document, window);
 
 
-$(document).ready(function() {
-
-$(window).on("load", function() {
-preloaderFadeOutTime = 500;
-function hidePreloader() {
-var preloader = $('.spinner-wrapper');
-preloader.fadeOut(preloaderFadeOutTime);
-}
-hidePreloader();
-});
-});
-
 var myIndex = 0;
 carousel();
 
