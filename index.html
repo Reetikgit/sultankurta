@@ -749,7 +749,13 @@ section {
   padding: 80px 0;
 }
 
-
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+@-ms-viewport {
+  width: device-width ;
+}
 /* TOP HEADER
 -------------------------------------------------- */
 
@@ -758,7 +764,7 @@ section {
 
 /*Swiper*/
 .swiper-container {
-  width: 100%;
+  max-width: 100%;
   height:45vh;
 }
 .swiper-slide {
