@@ -28,17 +28,12 @@
 
 <style>
 
-@media (min-width: 500px) and (max-width:2000px) {
-  .swiper-container{
-    height:30%;
-    width:80%;
-   }
 
-}
-@media (min-width: 500px) and (max-width:2000px) {
-  .swiper-container{
-    height:30%;
-    width:80%;
+@media (max-width:1500px) {
+  .swiper-container
+  {
+   
+    width:90%;
    }
 
 }
@@ -1738,23 +1733,26 @@ ul {
 <!-- /*Footer*/ -->
 
 <section id="contact">
-<footer id="contact" class="w3-center  w3-padding-64" style="background:#1b1b1c;">
+<footer id="contact" class="w3-center  w3-padding-50" style="background:#1b1b1c;">
     <h2 style="color: white;">Contact</i> </h2>
     <br>
-  <div class="w3-xlarge ">
-     <a href="#" class="fa fa-envelope w3-hover-opacity" style="color:white;">sultan_kurta@gmail.com</i>  </a>
+     <hr class="w3-border-grey" style="margin:auto;width:20%;"></b></h1></hr>
+    <br>
+  <div class="w3-large ">
+    <a href="#" class="fa fa-address-card w3-hover-opacity" style="color:white;font-size:0.9em;">Address:2 ,HartFord Lane 
+Kolkata - 700016</i>  </a>
+     <a href="#" class="fa fa-envelope w3-hover-opacity" style="color:white;font-size:0.9em;">sultan_kurta@gmail.com</i>  </a>
      <br>
         <i class="fa fa-phone w3-hover-opacity " style="font-size:1em; color: white;">+91 9748776735</i>
         <br>
-    <a href="https://www.facebook.com/reetik.chitragupt" class="fa fa-facebook-official w3-hover-opacity " style="color: white;"></i></a>
-   <a href="https://www.instagram.com/reetik_chitragupt/" class="fa fa-instagram w3-hover-opacity "style="color:white;"></i></a>
+    <a target="https://m.facebook.com/sultankurta/?tsid=0.9818316171332426&source=result" href="https://m.facebook.com/sultankurta/?tsid=0.9818316171332426&source=result" class="fa fa-facebook-official w3-hover-opacity " style="color: white;"></i></a>
+   <a target="https://instagram.com/sultankurta?igshid=mgrj2jgjwrnd" href="https://instagram.com/sultankurta?igshid=mgrj2jgjwrnd" class="fa fa-instagram w3-hover-opacity "style="color:white;"></i></a>
    
   </div>
-  <br>
-
+ 
   <h4 class="footer"> </h3><h3></h4><a href="" title="W3.CSS" target="_blank" class="w3-hover-text-green"></a></p>
-
-  <h3 class="footer fa fa-copyright " style="color: white;">WESTRAR GLOBAL</h3>
+  <h3 class="footer fa fa-copyright " style="color: white;font-size:1em;"> Sultan,the king of kurta</h3>
+  <h4 class="footer" style="color: white;font-size:1em;">Powered by Westrar Global</h4>
 
     
 </footer> 
@@ -1832,7 +1830,7 @@ $(window).click(function (e) {
         $target = $(target);
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top+2
-        }, 1500, 'swing', function () {
+        }, 2000, 'swing', function () {
             window.location.hash = target;
             $(document).on("scroll", onScroll);
         });
