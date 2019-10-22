@@ -169,10 +169,25 @@ body, html {
 }
 .animation-element.slide-left {
   opacity: 0;
-  -moz-transition: all 1000ms linear;
-  -webkit-transition: all 1000ms linear;
-  -o-transition: all 1000ms linear;
-  transition: all 1000ms linear;
+  -moz-transition: all 1400ms ease-out;
+  -webkit-transition: all 1400ms ease-out;
+  -o-transition: all 1400ms ease-out;
+  transition: all 1400ms ease-out;
+  -moz-transform: translate3d(0px, 200px, 0px);
+  -webkit-transform: translate3d(0px, 200px, 0px);
+  -o-transform: translate(0px, 200px);
+  -ms-transform: translate(0px, 200px);
+  transform: translate3d(0px, 200, 0px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.animation-element.slide-right {
+opacity: 0;
+  -moz-transition: all 500ms linear;
+  -webkit-transition: all 500ms linear;
+  -o-transition: all 500ms linear;
+  transition: all 500ms linear;
   -moz-transform: translate3d(-100px, 0px, 0px);
   -webkit-transform: translate3d(-100px, 0px, 0px);
   -o-transform: translate(-100px, 0px);
@@ -295,6 +310,26 @@ body {
  
   
 }
+/*anumation popup*/
+
+/*animation element*/
+
+
+/*3 grid layout*/
+
+
+/*bounce up animation for the subject*/
+
+
+
+
+/*Category color / icon color*/
+
+
+
+/*media queries for small devices*/
+
+
 .block {
   height: 10em;
 
@@ -1329,15 +1364,16 @@ ul {
       <div class="w3-col 25 s12">
 
         <div class="w3-container w3-center"style="background-color:#1a1a1c;color: white;">
-              <div class="animation-element slide-left ">
-           
+              <div class="animation-element bounce-up ">
+    
+             <div class="animation-element slide-left ">
                   <h3>Introduction</h3>
                 <br>
                   <h5>Foundation <span class="w3-opacity">January 27, 1990</span></h5>
                     <br>
               </div>
         </div>
-              <div class="animation-element slide-left ">
+                 <div class="animation-element slide-left ">
                   <div class="w3-container w3-center"style="background-color:#1a1a1c;color: white;">
                      <p >Sultan was founded by Arshad Shamim, who is now presently the Director of the very company which he set up on 27th January 1990 which sold Kurtas and Sherwani with not a varied collection. On 27th January 2000, Sultan became Sultans Apparels Pvt. Ltd. which sold Kurta, Sherwani, Ethnic accessories, Grooms wear, children's wear etc. This company provides a huge variety of Collection to satisfy customers from all over the country to across the border. Sultans Apparels are affiliated to Big bazar, Reliance.</p>
                   </div>
@@ -1850,10 +1886,12 @@ ul {
 
 <section id="contact">
 <footer id="contact" class="w3-center  w3-padding-50" style="background:#1b1b1c;">
+  <div class="animation-element slide-left">
     <h2 style="color: white;">Contact</i> </h2>
     <br>
      <hr class="w3-border-grey" style="margin:auto;width:20%;"></b></h1></hr>
     <br>
+      
   <div class="w3-large ">
     <a href="#" class="fa fa-address-card w3-hover-opacity" style="color:white;font-size:0.9em;">Address:2 ,HartFord Lane 
 Kolkata - 700016</i>  </a>
@@ -1872,11 +1910,39 @@ Kolkata - 700016</i>  </a>
 
     
 </footer> 
+</div>
 </h3></h4></footer></section></div>
 </body>
 
 <!-- java script   -->  
 <script type="text/javascript">
+
+  var $animation_elements = $('.animation-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
 
 var $animation_elements = $('.animation-element');
 var $window = $(window);
